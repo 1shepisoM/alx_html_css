@@ -67,7 +67,7 @@ body {
 .hero {
     position: relative;
     height: 700px;
-    background: url("assets/images/Webheader.png") no-repeat center/cover;
+    background: url("assets/images/headphones_hero_1.jpg") no-repeat center/cover;
 }
 
 .hero-overlay {
@@ -190,7 +190,7 @@ body {
    OUR RESULTS
 =========================== */
 .results {
-    background: url("assets/images/Webfooter.png") center/cover no-repeat;
+    background: url("assets/images/headphones_hero_2.jpg") center/cover no-repeat;
     padding: 120px 0;
     position: relative;
 }

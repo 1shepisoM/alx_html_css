@@ -59,7 +59,7 @@ a:hover { color: var(--accent); }
    HERO
    ========================================= */
 .hero {
-  background: url("assets/images/Webheader.png") center/cover no-repeat;
+  background: url("assets/images/headphones_hero_1.jpg") center/cover no-repeat;
   min-height: 600px;
   position: relative;
   padding-top: 120px;
@@ -115,7 +115,7 @@ a:hover { color: var(--accent); }
    ========================================= */
 .results {
   padding: 100px 0;
-  background: url("assets/images/Webfooter.png") center/cover no-repeat;
+  background: url("assets/images/headphones_hero_2.jpg") center/cover no-repeat;
   color: white;
   text-align: center;
 }
