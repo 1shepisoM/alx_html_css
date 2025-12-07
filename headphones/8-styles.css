@@ -1,0 +1,158 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #FF6565;
+    --max-width: 1000px;
+}
+
+/* GLOBAL */
+body {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 30px 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Desktop nav */
+.nav a {
+    color: #fff;
+    margin-left: 30px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+/* HAMBURGER BUTTON */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s ease;
+}
+
+/* MOBILE NAV MENU */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: #071629;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.mobile-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.mobile-nav a:hover {
+    color: var(--accent);
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 700px;
+    background: url("assets/images/Webheader.png") center/cover no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#07162900, #071629d9);
+}
+
+.hero-content {
+    position: relative;
+    padding-top: 250px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 40px;
+    background: var(--accent);
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+
+    /* Hide desktop nav */
+    .nav {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* When JS adds .open */
+    .mobile-nav.show {
+        display: flex;
+    }
+
+    /* Hamburger animation */
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

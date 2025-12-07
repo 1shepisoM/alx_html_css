@@ -1,0 +1,230 @@
+/* =========================================
+   RESET & VARIABLES
+   ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --accent: #FF6565;
+  --bg-dark: #071629;
+  --text-light: #ffffff;
+  --max-width: 1000px;
+  --font: "Source Sans Pro", sans-serif;
+}
+
+body { font-family: var(--font); color: #111; }
+
+/* CONTAINER */
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* LINKS */
+a { text-decoration: none; }
+a:hover { color: var(--accent); }
+
+/* BUTTONS */
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 26px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+.btn:hover { opacity: 0.9; }
+
+/* =========================================
+   HEADER
+   ========================================= */
+.site-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 10;
+  color: #fff;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+.hero {
+  background: url("assets/images/Webheader.png") center/cover no-repeat;
+  min-height: 600px;
+  position: relative;
+  padding-top: 120px;
+  color: #fff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-inner {
+  position: relative;
+  text-align: center;
+}
+
+/* =========================================
+   WHAT WE DO
+   ========================================= */
+.what {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ---------- ANIMATIONS FOR ICON CARDS ---------- */
+
+.icon-card {
+  width: 22%;
+  padding: 20px;
+  border-radius: 8px;
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    opacity 0.35s ease;
+  cursor: pointer;
+}
+
+.icon-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  opacity: 0.92;
+}
+
+/* =========================================
+   OUR RESULTS WITH CSS PENTAGONS
+   ========================================= */
+.results {
+  padding: 100px 0;
+  background: url("assets/images/Webfooter.png") center/cover no-repeat;
+  color: white;
+  text-align: center;
+}
+
+.pentagon-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+/* ---------- FLOATING ANIMATION ---------- */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Pentagon wrapper */
+.pentagon-card {
+  width: 22%;
+  text-align: center;
+}
+
+/* Pentagon shape */
+.pentagon {
+  width: 140px;
+  height: 140px;
+  margin: auto;
+  background: var(--accent);
+  clip-path: polygon(
+    50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover: lift + scale */
+.pentagon:hover {
+  transform: scale(1.06) translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+  animation-play-state: paused;
+}
+
+/* Labels */
+.pentagon-label {
+  margin-top: 10px;
+}
+
+/* =========================================
+   CONTACT
+   ========================================= */
+.contact {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.site-footer {
+  background: var(--bg-dark);
+  color: white;
+  padding: 40px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 480px) {
+  .site-nav { display: none; }
+
+  .icon-card,
+  .pentagon-card {
+    width: 100%;
+  }
+
+  .pentagon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
